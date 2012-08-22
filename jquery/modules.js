@@ -8,20 +8,14 @@
  */
 var BASEPATH = "";
 var MODULES = {
-	system : 0,
-	header : 0,
-	footer : 0,
-	filters : 0,
-	control_panel : 0,
-	timeline : 1,
-	semester : 1
+	example : 1
 }
 function loadModules() {
 	for (var MODULE in MODULES) {
 		if(MODULES[MODULE] != 0 && document.getElementById(MODULE)) {
 			el = document.createElement('script');
 			el.setAttribute('src',BASEPATH+MODULE+'.js');
-			document.head.appendChild(el);
+			document.body.appendChild(el);
 		}
 	}
 }
